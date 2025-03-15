@@ -69,6 +69,7 @@ A simple application showcasing data display and manipulation using ag-grid-reac
 
 ## Project Structure
 
+```bash
 <project_directory>/
 ├── public/
 ├── src/
@@ -85,6 +86,7 @@ A simple application showcasing data display and manipulation using ag-grid-reac
 ├── tsconfig.node.json
 ├── vite.config.ts
 └── README.md
+```
 
 ## Technologies Used
 
