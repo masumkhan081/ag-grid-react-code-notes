@@ -1,54 +1,95 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite + ag-grid-react
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project demonstrates a React application using TypeScript, Vite, and ag-grid-react for efficient data grid display and manipulation.
 
-Currently, two official plugins are available:
+## Purpose
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A simple application showcasing data display and manipulation using ag-grid-react.
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js (>=18)
+- npm or yarn
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Installation
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1.  **Clone the repository:**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+    ```bash
+    git clone https://github.com/masumkhan081/ag-grid-react-code-notes.git
+    cd  ag-grid-react-code-notes
+    ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+## Running the Application
+
+1.  **Start the JSON server:**
+
+    Open a new terminal and run:
+
+    ```bash
+    npx json-server --watch db.json --port 3004
+    ```
+
+    (Ensure you have a `db.json` file in the root of your project with the data you want to display. Example `db.json` structure:
+
+    ```json
+    {
+      "users": [
+        {
+          "id": 1,
+          "name": "Mark Ross",
+          "company": "Genco Pura Olive Oil Company",
+          "country": { "name": "Portugal", "flag": "pt" },
+          "mobile": "(231) 638-1199"
+        }
+      ]
+    }
+    ```
+    )
+
+2.  **Start the React application:**
+
+    In the original terminal, run:
+
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
+
+    The application will be available at `http://localhost:5173` (or another port specified by Vite).
+
+## Project Structure
+
+<project_directory>/
+├── public/
+├── src/
+│ ├── components/
+│ │ └── ...
+│ ├── App.tsx
+│ ├── main.tsx
+│ ├── vite-env.d.ts
+│ └── ...
+├── db.json
+├── index.html
+├── package.json
+├── tsconfig.json
+├── tsconfig.node.json
+├── vite.config.ts
+└── README.md
+
+## Technologies Used
+
+- **React:** JavaScript library for building user interfaces.
+- **TypeScript:** Strongly typed programming language that builds on JavaScript.
+- **Vite:** Next generation frontend tooling.
+- **ag-grid-react:** High-performance data grid for React.
+- **json-server:** Mock REST API for prototyping and testing.

@@ -26,7 +26,7 @@ const GridExample = () => {
 
   // Column Definitions: Defines & controls grid columns.
   const [colDefs, setColDefs] = useState<ColDef<IRow>[]>([
-    { field: "mission", headerName: "Mission", width: 200,filter: true },
+    { field: "mission", headerName: "Mission", width: 200, filter: true },
     { field: "company", headerName: "Company", width: 150 },
     { field: "location", headerName: "Location", width: 300 },
     { field: "date", headerName: "Date", width: 120 },
@@ -37,9 +37,9 @@ const GridExample = () => {
       headerName: "Priceeee",
       width: 150,
       valueFormatter: (params) => `£${params.value.toLocaleString()}`,
-      cellRenderer:({ value }:{value:number}) => (
+      cellRenderer: ({ value }: { value: number }) => (
         <span className="bg-sky-400">{value}</span>
-    )
+      ),
     },
     {
       field: "successful",
@@ -64,7 +64,12 @@ const GridExample = () => {
   // Container: Defines the grid's theme & dimensions.
   return (
     <div className="w-auto min-w-[550px] md:w-[750px] lg:w-[850px] md:h-[450px] sm:h-[350px] h-[350px]">
-      <AgGridReact rowData={rowData} columnDefs={colDefs} defaultColDef={{filter:true}} pagination={true}/>
+      <AgGridReact
+        rowData={rowData}
+        columnDefs={colDefs}
+        defaultColDef={{ filter: true }}
+        pagination={true}
+      />
     </div>
   );
 };
